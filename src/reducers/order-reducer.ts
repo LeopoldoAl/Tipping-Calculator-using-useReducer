@@ -50,16 +50,21 @@ export const  orderReducer = (
             order: state.order.filter( item => item.id !== action.payload.id )
         }
     }
+
     if (action.type==='place-order') {
         
         return {
             ...state
         }
     }
+
     if (action.type==='add-tip') {
         
+        const tip = action.payload.value
+
         return {
-            ...state
+            ...state,
+            tip
         }
     }
 
