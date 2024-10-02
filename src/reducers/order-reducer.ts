@@ -43,10 +43,11 @@ export const  orderReducer = (
             order
         }
     }
+
     if (action.type==='remove-ttem') {
-        
         return {
-            ...state
+            ...state,
+            order: state.order.filter( item => item.id !== action.payload.id )
         }
     }
     if (action.type==='place-order') {
